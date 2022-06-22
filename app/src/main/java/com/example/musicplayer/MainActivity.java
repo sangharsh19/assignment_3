@@ -18,11 +18,15 @@ public class MainActivity extends AppCompatActivity {
         musicplay.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DisplayMessageActivity.class);
-                startActivity(intent);
+               openMusicPlayer();
             }
 
 
         });
+    }
+
+    void openMusicPlayer(){
+        Intent intent = new Intent(this,MusicPlayer.class);
+        startActivity(intent);
     }
 }
