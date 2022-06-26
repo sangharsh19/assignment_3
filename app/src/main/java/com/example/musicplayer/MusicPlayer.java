@@ -3,10 +3,13 @@ package com.example.musicplayer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -24,7 +27,7 @@ import java.util.ArrayList;
 
 public class MusicPlayer extends AppCompatActivity {
     ListView listView;
-    String[] items;
+    ArrayList<String> items;
 
 
     @Override
@@ -93,6 +96,23 @@ public class MusicPlayer extends AppCompatActivity {
 
             CustomAdapter customAdapter = new CustomAdapter();
             listView.setAdapter(customAdapter);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    String songname = (String) listView.getItemAtPosition(position);
+                    //new Intent(getApplicationContext(),PlayerActivity.class).putExtra("songs",items).putExtra("songname",songname).putExtra("pos",position)
+                    Intent intent1 = new Intent(getApplicationContext(),PlayerActivity.class);
+                    intent1.putExtra("songs",items);
+                    intent1.putExtra("songname",songname);
+                    intent1.putExtra("pos",position);
+
+
+                    startActivity(intent1);
+
+                }
+            });
 
     }
 

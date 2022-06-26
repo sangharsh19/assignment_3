@@ -4,24 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".MainActivity"
     >
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_weight="4">
+     <Button
+         android:id="@+id/button3"
 
-    <Button
-        android:id="@+id/button3"
+         android:layout_width="190dp"
+         android:layout_marginTop="50dp"
+         android:layout_height="wrap_content"
+         android:textSize="20sp"
+         android:text="Download" />
 
-        android:layout_width="190dp"
-        android:layout_marginTop="350dp"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Download" />
+     <Button
+         android:id="@+id/button"
+         android:layout_width="190dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:layout_marginTop="50dp"
+         android:textSize="20sp"
+         android:text="Music" />
+ </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginTop="350dp"
-        android:textSize="20sp"
-        android:text="Music" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Loaction:"
+            android:textSize="30sp"
+
+            ></TextView>
+
+        <TextView
+            android:id="@+id/lat"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/lan"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="textview" />
+    </LinearLayout>
+
+
+
+
 </LinearLayout>
